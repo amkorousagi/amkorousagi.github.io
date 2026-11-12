@@ -1,0 +1,23 @@
+---
+layout: default
+title: 기술 블로그
+nav: blog
+description: 온디바이스 추론 최적화·Computer Vision 작업 기록
+---
+<section class="blog">
+  <h1>기술 블로그</h1>
+  <p class="lead">온디바이스 추론 최적화와 Computer Vision 작업에서 배운 것을 정리합니다.</p>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">첫 글을 준비하고 있습니다.</p>
+  {% endif %}
+</section>

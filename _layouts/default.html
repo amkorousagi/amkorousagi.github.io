@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}">박세찬</a>
+      <span class="nav-links">
+        <a href="{{ '/' | relative_url }}"{% if page.nav == 'cv' %} class="active"{% endif %}>CV</a>
+        <a href="{{ '/blog/' | relative_url }}"{% if page.nav == 'blog' %} class="active"{% endif %}>기술 블로그</a>
+      </span>
+    </nav>
+  </header>
+  <main class="wrap">
+{{ content }}
+  </main>
+  <footer class="site-footer wrap">
+    <a href="https://github.com/amkorousagi">GitHub</a> · <a href="https://linkedin.com/in/se-chan-park-5a4b84192">LinkedIn</a> · <a href="https://scholar.google.co.kr/citations?user=V2_eA3cAAAAJ">Google Scholar</a>
+  </footer>
+</body>
+</html>

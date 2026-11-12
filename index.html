@@ -1,0 +1,142 @@
+---
+layout: default
+nav: cv
+description: 온디바이스 Computer Vision 모델을 실제 제품에서 빠르고 정확하게 돌게 만드는 ML 엔지니어 박세찬의 CV
+---
+<section class="hero">
+  <h1>박세찬<span class="name-en">Sechan Park</span></h1>
+  <p class="role">AI/ML Engineer · On-Device Computer Vision · 추론 최적화</p>
+  <p class="links">
+    <a href="mailto:hasmi5452@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/se-chan-park-5a4b84192">LinkedIn</a>
+    <a href="https://github.com/amkorousagi">GitHub</a>
+    <a href="https://scholar.google.co.kr/citations?user=V2_eA3cAAAAJ">Google Scholar</a>
+    <a href="{{ '/blog/' | relative_url }}">기술 블로그</a>
+  </p>
+  <p class="lead">온디바이스 Computer Vision 모델을 실제 제품에서 빠르고 정확하게 돌게 만드는 ML 엔지니어입니다. <a href="https://www.etoday.co.kr/news/view/2626050">식약처 품목허가</a>를 받은 소아 근시 디지털 치료기기 <b>MyoHabit</b>의 시선 추적 파이프라인을 Android·iOS 기기 안에서 설계·운영하며, 추론 최적화와 React Native·Unity 공용 C++ 추론 SDK를 맡고 있습니다.</p>
+</section>
+
+<section>
+  <h2>경력</h2>
+
+  <div class="job-head">
+    <h3>에스알파테라퓨틱스 · AI Center</h3>
+    <span class="period">2024.01 – 현재</span>
+  </div>
+  <ul class="titles">
+    <li>AI Center 연구원 (Manager) · 2024.12 – 현재</li>
+    <li>Research &amp; Science Team Head · 2024.04 – 2024.12</li>
+    <li>IT기술개발부 AI팀 Unity/AI 개발자 · 2024.01 – 2024.04</li>
+  </ul>
+
+  <div class="project">
+    <div class="job-head"><h4>MyoHabit 온디바이스 시선 추적 — 검출 → 랜드마크·홍채 → 시선·거리</h4><span class="period">2024.01 – 현재</span></div>
+    <ul>
+      <li><b>사내 시선 추적 SDK</b> — 추론을 C++ 네이티브 코어(ONNX Runtime·TFLite)로 옮기고 C API로 감싸 React Native·Unity에 같은 API로 제공. 렌더링과 분리된 전용 스레드로 게임 부하에서 추론 1회 처리 시간 Galaxy Tab S7 <b>42.4 → 15.1ms</b>(화면 47 → 60fps), iPad M1 <b>12.5 → 7.4ms</b> (DEV/QA 배포)</li>
+      <li><b>추론 최적화</b> — 실기기 계측으로 병목이 연산량이 아닌 GPU→CPU 결과 전달임을 찾아 구조를 바꿔 시선 파이프라인 추론 시간 <b>120–300ms → 42–48ms</b>. 모델 그래프 정리(레이아웃 통일·양눈 배치 추론·출력 병합)로 추론 시간 <b>2~4배</b> 단축, 모델 크기 <b>-40%</b></li>
+      <li><b>출력이 같은 런타임 최적화</b> — 연산자별 프로파일로 활성화 연산 병목을 찾아 그래프 정리만으로 랜드마크 추론 <b>24%</b> 단축(출력 비트 동일), TFLite·XNNPACK 하이브리드, 전처리 <b>14.6 → 6.3ms</b>. 정확도가 바뀌는 FP16·INT8은 기각</li>
+      <li><b>모델 재설계</b> — 거리 추정 기준을 얼굴 크기에서 홍채 직경 + 카메라 초점거리로 바꿔 최대 오차 <b>±10cm → 1.1–2.5cm</b></li>
+      <li><b>데이터·평가</b> — 성인 16명 × 기기 2종 실데이터로 판정 모델 4종을 피험자 단위 교차검증으로 재적합</li>
+      <li><b>CI/CD·품질 게이트</b> — Jenkins로 Google Play 업로드까지 자동 배포, LLM 자동 PR 리뷰봇, 시선 회귀 테스트 <b>49/49</b> CI 게이트, SDK npm 자동 배포</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="job-head"><h4>임상 데이터 예측 모델 — 데이터 마이닝 · 피처 엔지니어링 · 회귀 모델링</h4><span class="period">2026.05 – 2026.08</span></div>
+    <ul>
+      <li>임상시험 시선 추적 로그(근시 아동 20명, 약 <b>18만 건</b>)에서 행동 지표를 설계하고 Ridge·Lasso·MLP·GBM을 LOOCV로 비교. 집단 공변량 통제로 소규모 데이터 과적합 방지. <b>APOIS 2026</b> 발표 (3저자)</li>
+      <li>확증 임상(40명, 1년) 시선 로그에서 행동 피처 약 970개로 근시 진행 예측 회귀 모델 개발</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="job-head"><h4>치료 앱 문장 추천 — NLP · 문장 임베딩 · 모델 서빙</h4><span class="period">2025.01 – 2025.03</span></div>
+    <ul>
+      <li>Hugging Face Transformers 감정 분류(KOTE·GoEmotions)와 문장 임베딩(SRoBERTa)을 결합한 추천 설계 — 정신과 전문의 자문 기반 후보 273개</li>
+      <li>PyTorch → ONNX 변환, Node.js·Docker API로 프로덕션 배포(임상 대기), 추론 <b>11.33 → 2.61ms</b></li>
+    </ul>
+  </div>
+
+  <div class="job-head" style="margin-top:32px">
+    <h3>경북대학교 소프트웨어 테스팅 연구실 · 학부연구생 / 석사</h3>
+    <span class="period">2021.04 – 2024.02</span>
+  </div>
+  <ul>
+    <li><b>강화학습 게임 테스트 자동화 (UnityPGTA)</b> — 오픈소스 게임 3종에서 에러 <b>72건</b> 자동 탐지. 정보과학회논문지 1저자, KCC 2023 최우수논문상</li>
+    <li><b>소량·불균형 데이터 회귀</b> — 이상치 처리·증강으로 섬유 강도 MAE <b>0.165 → 0.120</b>, 조정 R² <b>0.479 → 0.789</b>. KIPS TSDE 1저자</li>
+  </ul>
+</section>
+
+<section>
+  <h2>오픈소스</h2>
+  <ul>
+    <li><a href="https://github.com/microsoft/onnxruntime/issues/24096">microsoft/onnxruntime#24096</a> — onnxruntime-node + Transformers.js segfault 최소 재현·제보</li>
+    <li><a href="https://github.com/amkorousagi/onnxruntime_flutter">onnxruntime_flutter (fork)</a> — 매 프레임 입력 flatten·중간 복사 제거, 프레임당 <b>14–20ms</b> 단축</li>
+    <li><a href="https://github.com/amkorousagi/UnityPGTA">UnityPGTA</a> — 강화학습 게임 테스트 자동화 도구</li>
+    <li><a href="https://github.com/amkorousagi/KOJ">KOJ</a> — 프로그래밍 강의용 온라인 채점 시스템 (조교 시절 구축)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>기술</h2>
+  <dl class="skills">
+    <dt>추론 · 온디바이스</dt>
+    <dd><span class="chip">ONNX Runtime</span><span class="chip">TFLite (XNNPACK)</span><span class="chip">C++ (멀티스레딩 · C API)</span><span class="chip">Android NDK/JNI · Camera2</span><span class="chip">iOS (Swift)</span><span class="chip">Unity Inference Engine</span><span class="chip">OpenGL ES · Compute Shader</span></dd>
+    <dt>ML · 모델링</dt>
+    <dd><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">ONNX</span><span class="chip">Hugging Face Transformers</span><span class="chip">scikit-learn</span><span class="chip">pandas · statsmodels</span></dd>
+    <dt>엔지니어링</dt>
+    <dd><span class="chip">C#</span><span class="chip">Dart</span><span class="chip">Node.js</span><span class="chip">SQL</span><span class="chip">Docker</span><span class="chip">CMake</span><span class="chip">Git · GitHub Actions · Jenkins</span></dd>
+  </dl>
+</section>
+
+<section>
+  <h2>학력</h2>
+  <div class="job-head"><h3>경북대학교 대학원 컴퓨터학부 석사</h3><span class="period">2022.03 – 2024.02</span></div>
+  <p class="sub">GPA 4.38/4.5 · 석사학위논문 「강화학습을 이용한 게임 테스팅 자동화 도구」</p>
+  <div class="job-head"><h3>경북대학교 컴퓨터학부 학사</h3><span class="period">2018.03 – 2022.02</span></div>
+  <p class="sub">GPA 3.74/4.5</p>
+</section>
+
+<section>
+  <h2>논문 10</h2>
+  <ol class="pubs">
+    <li>Digital Biomarkers Predicting Choroidal Thickness Changes During SAT-001 Use in Children With Myopia: An Exploratory Study. <a href="https://kosmeeting.org/abstract/2026_136/apois/abstract/sub02.html">APOIS 2026</a> (3저자)</li>
+    <li>UnityPGTA: 강화학습을 이용한 유니티 플랫포머 게임의 테스팅 자동화 도구. 정보과학회논문지 51(2), 2024 (1저자)</li>
+    <li>강화학습을 이용한 게임 테스팅 자동화 도구. 경북대 석사학위논문, 2024</li>
+    <li>유니티 기반 플랫폼 게임 테스팅 자동화 도구의 설계. 한국정보과학회 KCC 2023 (1저자)</li>
+    <li>물성 예측 모델 기반 방사 공정 역설계. KCSE 2023 (1저자)</li>
+    <li>데이터 불균형과 측정 오차를 고려한 생분해성 섬유 인장 강신도 예측 모델 개발. KIPS TSDE 11(12), 2022 (1저자)</li>
+    <li>생분해성 섬유 방사 공정 데이터 특성을 고려한 물성 예측 모델 개발. 한국정보처리학회 학술대회 29(1), 2022 (1저자)</li>
+    <li>프로그래밍 교육 지원을 위한 Unity 기반의 GUI 디버깅 도우미. 한국컴퓨터정보학회 30(2), 2022 (1저자)</li>
+    <li>U-Net 기반 원격판독 소프트웨어. 한국IT서비스학회 춘계학술대회, 2021 (2저자)</li>
+    <li>Web-RTC에 관한 기술동향분석. 한국통신학회 학술대회, 2020 (1저자)</li>
+  </ol>
+</section>
+
+<section>
+  <h2>수상 11</h2>
+  <ul>
+    <li><b>KCC 2023 최우수논문상</b> — 유니티 기반 플랫폼 게임 테스팅 자동화 도구의 설계</li>
+    <li><b>KIPS-AOH 2022 논문아이디어상</b> — 생분해성 섬유 인장 강신도 예측 모델</li>
+    <li><b>KIPS ASK 2022 우수논문상</b> — 섬유 방사 공정 물성 예측 모델</li>
+    <li>희망이음 프로젝트 입선 (2022.02)</li>
+    <li>대구글로벌게임센터 게임콘텐츠 제작 지원 선정 (2021) — NEXT</li>
+    <li>DIP SW 산학협력 성과발표회 최우수상 (2021.07) — Untact Medical</li>
+    <li>대경권 대학생 프로그래밍 경진대회 최우수상 (2021.06)</li>
+    <li>NAVER AI Rush 1라운드 8위 (2021) — Smart Store SKU 수요예측</li>
+    <li>K-water 대국민 환경 빅데이터 공모전 최우수(사장상) (2020.11)</li>
+    <li>오픈 인프라 개발 경진대회 장려상 (2020.08) — Trendup!</li>
+    <li>오픈 인프라 개발 경진대회 동상 (2019.08) — Meali</li>
+  </ul>
+</section>
+
+<section>
+  <h2>이전 경험</h2>
+  <ul>
+    <li>프리랜스 풀스택 개발 (2022.09 – 2023.07) — 주차 조사 웹, 스마트팜 센서 동기화 서버·관리자 페이지 납품</li>
+    <li>경북대 프로그래밍 기초(C) 메인 조교 (2022.03 – 2024.02) — 강의용 온라인 채점 시스템 KOJ 구축</li>
+    <li>더블디(DoubleD) 인턴 (2021.06 – 2021.08) — TypeScript 백엔드, QA</li>
+    <li>Untact Medical 산학 프로젝트 (2021.03 – 2021.06) — U-Net 원격판독 보조 웹</li>
+    <li>경북대 영상처리 및 분석 연구실 학부 인턴 (2020.09 – 2020.12) — 의료 AI 데이터 라벨링</li>
+  </ul>
+</section>

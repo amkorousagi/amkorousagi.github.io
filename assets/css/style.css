@@ -83,6 +83,7 @@ ol.pubs li { margin: 6px 0; }
 .card { margin: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
 .card video, .card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
 .card img { object-fit: contain; background: #fff; padding: 8px; }
+.card img.cover { object-fit: cover; padding: 0; background: #000; }
 .card figcaption { padding: 12px 14px 14px; }
 .card h4 { margin: 0 0 4px; font-size: 15px; }
 .card p { margin: 0; font-size: 14px; color: var(--muted); }

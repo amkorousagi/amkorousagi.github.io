@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: ["온디바이스 추론", "추론 최적화", "GPU", "프로파일링", "Computer Vision"]
 title: "작은 비전 모델은 왜 GPU에서 더 느릴까 — 렌더링 앱 안에서 추론할 때 확인할 것"
 redirect_from:
   - /blog/2026/11/13/small-model-gpu-readback/

@@ -1,5 +1,6 @@
 ---
 layout: post
+tags: ["CI/CD", "Jenkins", "Android", "Unity", "Google Play", "LLM"]
 title: "Unity Android 앱을 Jenkins로 Google Play 내부 테스트까지 자동 배포하기"
 description: 키스토어·서비스 계정·Play Console 권한부터 빌드 번호 자동 증가, 첫 업로드 함정, 슬랙 알림까지 순서대로 정리
 ---

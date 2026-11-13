@@ -2,11 +2,13 @@
 layout: default
 title: 기술 블로그
 nav: blog
-description: 온디바이스 추론 최적화·Computer Vision 작업 기록
+description: 온디바이스 추론 최적화·Computer Vision·NLP·ML 모델링 작업 기록
 ---
 <section class="blog">
   <h1>기술 블로그</h1>
-  <p class="lead">온디바이스 추론 최적화와 Computer Vision 작업에서 배운 것을 정리합니다.</p>
+  <p class="lead">온디바이스 추론 최적화, Computer Vision, NLP, 소규모 데이터 모델링에서 배운 것을 정리합니다.</p>
+  {% assign tags_sorted = site.tags | sort %}
+  <p class="tags tag-cloud">{% for t in tags_sorted %}{% if t[1].size > 1 %}<a class="tag" href="{{ '/blog/tags/' | relative_url }}#{{ t[0] | slugify: 'raw' }}">{{ t[0] }} <span class="count">{{ t[1].size }}</span></a>{% endif %}{% endfor %}<a class="tag" href="{{ '/blog/tags/' | relative_url }}">전체 태그 →</a></p>
   {% if site.posts.size > 0 %}
   <ul class="post-list">
     {% for post in site.posts %}
@@ -14,6 +16,7 @@ description: 온디바이스 추론 최적화·Computer Vision 작업 기록
       <span class="date">{{ post.date | date: "%Y.%m.%d" }}</span>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+      {% if post.tags.size > 0 %}<p class="tags">{% for t in post.tags %}<a class="tag" href="{{ '/blog/tags/' | relative_url }}#{{ t | slugify: 'raw' }}">{{ t }}</a>{% endfor %}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>

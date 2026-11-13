@@ -1,0 +1,20 @@
+---
+layout: default
+title: 태그
+nav: blog
+description: 기술 블로그 글을 기술 태그별로 모아 봅니다
+---
+<section class="blog">
+  <p class="post-meta"><a href="{{ '/blog/' | relative_url }}">← 기술 블로그</a></p>
+  <h1>태그</h1>
+  {% assign tags_sorted = site.tags | sort %}
+  <p class="tags tag-cloud">{% for t in tags_sorted %}<a class="tag" href="#{{ t[0] | slugify: 'raw' }}">{{ t[0] }} <span class="count">{{ t[1].size }}</span></a>{% endfor %}</p>
+  {% for t in tags_sorted %}
+  <h2 id="{{ t[0] | slugify: 'raw' }}">{{ t[0] }}</h2>
+  <ul class="post-list compact">
+    {% for post in t[1] %}
+    <li><span class="date">{{ post.date | date: "%Y.%m.%d" }}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>

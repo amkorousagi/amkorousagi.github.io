@@ -1,8 +1,10 @@
 title: 박세찬 · Sechan Park
-description: AI/ML Engineer · On-Device Computer Vision · NLP · 추론 최적화
+description: AI/ML Engineer · On-Device Computer Vision · 추론 최적화
 lang: ko
 url: https://amkorousagi.github.io
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 exclude:
   - README.md
+plugins:
+  - jekyll-redirect-from

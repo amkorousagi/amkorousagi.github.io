@@ -32,7 +32,7 @@ description: 온디바이스 Computer Vision 모델을 설계·개발해 제품�
   <div class="project">
     <div class="job-head"><h4>MyoHabit 온디바이스 시선 추적 — 검출 → 랜드마크·홍채 → 시선·거리</h4><span class="period">2024.01 – 현재</span></div>
     <ul>
-      <li><b>추론 최적화</b> — 실기기 프로파일링으로 병목이 연산량이 아니라 GPU→CPU 결과 전달임을 찾아 출력·백엔드 구조를 바꿔 시선 파이프라인 추론 시간 <b>120–300ms → 42–48ms</b>. 레이아웃 통일·양눈 배치 추론·출력 병합 등 모델 그래프 정리 (<a href="{{ '/blog/2026/11/13/gpu-cpu-sync-bottleneck/' | relative_url }}">과정 정리</a>)</li>
+      <li><b>추론 최적화</b> — 실기기 프로파일링으로 병목이 연산량이 아니라 GPU→CPU 결과 전달임을 찾아 출력·백엔드 구조를 바꿔 시선 파이프라인 추론 시간 <b>120–300ms → 42–48ms</b>. 레이아웃 통일·양눈 배치 추론·출력 병합 등 모델 그래프 정리</li>
       <li><b>사내 시선 추적 SDK</b> — 추론을 C++ 네이티브 코어(ONNX Runtime·TFLite)로 옮기고 C API로 감싸 React Native·Unity에 같은 API로 제공. 추론을 렌더링과 분리된 전용 스레드에서 실행</li>
       <li><b>출력이 같은 최적화</b> — 그래프 정리·런타임 선택(TFLite·XNNPACK)·전처리 재구성으로 결과값을 바꾸지 않고 추론 시간 단축. 정확도가 바뀌는 양자화는 측정 후 기각</li>
       <li><b>모델 재설계</b> — 거리 추정 기준을 얼굴 크기에서 홍채 직경 + 카메라 초점거리로 바꿈</li>

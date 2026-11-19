@@ -1,5 +1,7 @@
 ---
 layout: post
+redirect_from:
+  - /blog/closest-point-two-gaze-rays/
 tags: ["Computer Vision", "3D 기하", "선형대수", "시선 추적"]
 title: "두 3D 직선의 교점, 없으면 가장 가까운 점 — 양안 시선 벡터를 하나의 점으로 모으기"
 description: 두 눈에서 나온 시선 벡터처럼 3D 공간에서 거의 만나지만 정확히는 만나지 않는 두 직선에서, 가장 가까운 두 점과 그 중점을 닫힌 식으로 구하는 방법과 평행일 때의 처리

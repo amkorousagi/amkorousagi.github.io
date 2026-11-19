@@ -40,6 +40,10 @@ API 업로드는 **Play Console에 앱의 첫 번째 번들이 수동으로 올�
 에디터를 띄우지 않고 빌드하려면 `-batchmode -executeMethod`로 부를 정적 메서드를 만듭니다.
 
 ```csharp
+using System.Linq;
+using UnityEditor;
+using UnityEditor.Build.Reporting;
+
 public static class BuildScript
 {
     public static void BuildAndroid()
